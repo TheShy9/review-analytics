@@ -10,7 +10,13 @@ with open('reviews.txt', 'r') as f:
 print('档案读取完毕，总共有', len(data), '笔资料')
 
 for d in data:
-	length = len(d)
 	sum += len(d)
 
 print('留言平均长度为', sum/len(data))
+
+new = []
+for d in data:
+	if len(d) < 100:
+		new.append(d)
+print('一共有', len(new), '笔留言长度小于100')
+print(new[0])
